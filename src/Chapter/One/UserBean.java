@@ -12,6 +12,7 @@ import javax.enterprise.context.SessionScoped;
 @SessionScoped
 public class UserBean implements Serializable {
   private String name;
+  private String password;
 
   public String getName() {
     return name;
@@ -20,8 +21,6 @@ public class UserBean implements Serializable {
   public void setName(String newValue) {
     name = newValue;
   }
-  
-  private String password;
 
   public String getPassword() {
     return password;

@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class ProblemBean implements Serializable {
 
+  private ArrayList<Integer> sequence;
+  private int solution;
+
   public ProblemBean() {
   }
 
@@ -16,8 +19,6 @@ public class ProblemBean implements Serializable {
     this.solution = solution;
   }
 
-  private ArrayList<Integer> sequence;
-
   public ArrayList<Integer> getSequence() {
     return sequence;
   }
@@ -26,7 +27,6 @@ public class ProblemBean implements Serializable {
     sequence = newValue;
   }
 
-  private int solution;
 
   public int getSolution() {
     return solution;
