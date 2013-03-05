@@ -12,6 +12,7 @@
     </locale-config>
   </application>
 
+  <!-- Chapter 1 : A Simple Example -->
   <navigation-rule>
     <from-view-id>/Chapter/One/index.jsp</from-view-id>
     <navigation-case>
@@ -20,30 +21,79 @@
     </navigation-case>
   </navigation-rule>
 
+  <!-- Chapter 2 : Managed Beans -->
   <navigation-rule>
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
       <from-outcome>next</from-outcome>
-      <to-view-id>/index.jsp</to-view-id>
+      <to-view-id>/Chapter/Two/index.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
 
+  <!--  Chapter 3 : Navigation -->
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/Chapter/Three/success.jsp</to-view-id>
+      <redirect />
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>again</from-outcome>
+      <to-view-id>/Chapter/Three/again.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>failure</from-outcome>
+      <to-view-id>/Chapter/Three/failure.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>done</from-outcome>
+      <to-view-id>/Chapter/Three/done.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>startOver</from-outcome>
+      <to-view-id>/Chapter/Three/index.jsp</to-view-id>
+    </navigation-case>
+
+  </navigation-rule>
+
+  <!-- Chapter 1 : A Simple Example -->
   <managed-bean>
     <managed-bean-name>user</managed-bean-name>
     <managed-bean-class>Chapter.One.UserBean</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!-- Chapter 2 : Managed Beans -->
   <managed-bean>
-    <managed-bean-name>quiz</managed-bean-name>
+    <managed-bean-name>ch2quiz</managed-bean-name>
     <managed-bean-class>Chapter.Two.QuizBean</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!-- Chapter 3 : Navigation -->
+  <managed-bean>
+    <managed-bean-name>ch3quiz</managed-bean-name>
+    <managed-bean-class>Chapter.Three.QuizBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!-- Chapter 2 : Managed Beans -->
   <application>
     <resource-bundle>
       <base-name>Chapter.Two.messages</base-name>
-      <var>msgs</var>
+      <var>ch2msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 3 : Navigation -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Three.messages</base-name>
+      <var>ch3msgs</var>
     </resource-bundle>
   </application>
 
