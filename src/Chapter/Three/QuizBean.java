@@ -1,9 +1,5 @@
 package Chapter.Three;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-
 public class QuizBean {
   private int currentProblem;
   private int tries;

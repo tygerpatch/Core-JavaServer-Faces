@@ -1,9 +1,8 @@
 package Chapter.Two;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ProblemBean implements Serializable {
+public class ProblemBean {
 
   private ArrayList<Integer> sequence;
   private int solution;
