@@ -1,0 +1,19 @@
+package Chapter.Four.flags;
+
+import java.util.Locale;
+
+import javax.faces.context.FacesContext;
+
+public class LocaleChanger {
+  public String germanAction() {
+    FacesContext context = FacesContext.getCurrentInstance();
+    context.getViewRoot().setLocale(Locale.GERMAN);
+    return null;
+  }
+
+  public String englishAction() {
+    FacesContext context = FacesContext.getCurrentInstance();
+    context.getViewRoot().setLocale(Locale.ENGLISH);
+    return null;
+  }
+}
