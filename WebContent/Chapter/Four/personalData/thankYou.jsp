@@ -4,16 +4,16 @@
   <f:view>
     <head>
       <title>
-        <h:outputText value="#{msgs.thankYouWindowTitle}" />
+        <h:outputText value="#{Ch4PersonalDataMsgs.thankYouWindowTitle}" />
       </title>
     </head>
     <body>
-      <h:outputText value = "#{msgs.namePrompt}" style = "font-style: italic" />
-      <h:outputText value = "#{user.name}" />
+      <h:outputText value = "#{Ch4PersonalDataMsgs.namePrompt}" style = "font-style: italic" />
+      <h:outputText value = "#{Ch4PersonalDataUser.name}" />
       <br />
-      <h:outputText value = "#{msgs.aboutYourselfPrompt}" style = "font-style: italic" />
+      <h:outputText value = "#{Ch4PersonalDataMsgs.aboutYourselfPrompt}" style = "font-style: italic" />
       <br />
-      <pre><h:outputText value = "#{user.aboutYourself}" /></pre>
+      <pre><h:outputText value = "#{Ch4PersonalDataUser.aboutYourself}" /></pre>
     </body>
   </f:view>
 </html>

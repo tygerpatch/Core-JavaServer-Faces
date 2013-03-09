@@ -5,22 +5,22 @@
     <head>
       <link href = "styles.css" rel = "stylesheet" type = "text/css" />
       <title>
-        <h:outputText value = "#{msgs.windowTitle}" />
+        <h:outputText value = "#{Ch4PanelsMsgs.windowTitle}" />
       </title>
     </head>
     <body>
       <h:form>
         <h:panelGrid columns = "2" rowClasses = "oddrows, evenRows">
-          <h:outputText value = "#{msgs.namePrompt}:" />
+          <h:outputText value = "#{Ch4PanelsMsgs.namePrompt}:" />
           <h:panelGroup>
-            <h:inputText id = "name" value = "#{user.name}" required = "true" label = "#{msgs.namePrompt}" />
+            <h:inputText id = "name" value = "#{Ch4PanelsUser.name}" required = "true" label = "#{Ch4PanelsMsgs.namePrompt}" />
             <h:message for = "name" errorClass = "errors" />
           </h:panelGroup>
-          <h:outputText value = "#{msgs.agePrompt}:" />
-          <h:inputText size = "3" value = "#{user.age}" label = "#{msgs.agePrompt}" />
+          <h:outputText value = "#{Ch4PanelsMsgs.agePrompt}:" />
+          <h:inputText size = "3" value = "#{Ch4PanelsUser.age}" label = "#{Ch4PanelsMsgs.agePrompt}" />
         </h:panelGrid>
         <br />
-        <h:commandButton value = "#{msgs.submitPrompt}" />
+        <h:commandButton value = "#{Ch4PanelsMsgs.submitPrompt}" />
       </h:form>
     </body>
   </f:view>

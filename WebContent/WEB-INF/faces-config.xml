@@ -57,7 +57,32 @@
       <from-outcome>startOver</from-outcome>
       <to-view-id>/Chapter/Three/index.jsp</to-view-id>
     </navigation-case>
+  </navigation-rule>
 
+  <!--  Chapter 4: Standard JSF Tags; select -->
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>showInformation</from-outcome>
+      <to-view-id>/showInformatiom.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <!--  Chapter 4: Standard JSF Tags; personalData -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/thankYou.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <!--  Chapter 4: Standard JSF Tags; flags -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/thankYou.jsp</to-view-id>
+    </navigation-case>
   </navigation-rule>
 
   <!-- Chapter 1 : A Simple Example -->
@@ -81,6 +106,47 @@
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!--  Chapter 4: Standard JSF Tags; select -->
+  <managed-bean>
+    <managed-bean-name>form</managed-bean-name>
+    <managed-bean-class>Chapter.Four.select.RegisterForm</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 4: Standard JSF Tags; personalData -->
+  <managed-bean>
+    <managed-bean-name>Ch4PersonalDataUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.personalData.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 4: Standard JSF Tags; panels -->
+  <managed-bean>
+    <managed-bean-name>Ch4PanelsUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.panels.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 4: Standard JSF Tags; messages -->
+  <managed-bean>
+    <managed-bean-name>Ch4MessagesUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.messages.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 4: Standard JSF Tags; flags -->
+  <managed-bean>
+    <managed-bean-name>Ch4FlagsUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.flags.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <managed-bean>
+    <managed-bean-name>localeChanger</managed-bean-name>
+    <managed-bean-class>Chapter.Four.flags.LocaleChanger</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
   <!-- Chapter 2 : Managed Beans -->
   <application>
     <resource-bundle>
@@ -97,105 +163,52 @@
     </resource-bundle>
   </application>
 
+  <!--  Chapter 4: Standard JSF Tags; select -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.select.messages</base-name>
+      <var>Ch4SelectMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; personalData -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.personalData.messages</base-name>
+      <var>Ch4PersonalDataMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; panels -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.panels.messages</base-name>
+      <var>Ch4PanelsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; messages -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.messages.messages</base-name>
+      <var>Ch4MessagessMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; javascript -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.javascript.messages</base-name>
+      <var>Ch4JavaScriptMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; flags -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.flags.messages</base-name>
+      <var>Ch4FlagsMsgs</var>
+    </resource-bundle>
+  </application>
+
 </faces-config>
-
--- select --
-
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
-
-   <navigation-rule>
-       <navigation-case>
-           <from-outcome>showInformation</from-outcome>
-           <to-view-id>/showInformatiom.jsp</to-view-id>
-       </navigation-case>
-   </navigation-rule>
-
-   <managed-bean>
-       <managed-bean-name>form</managed-bean-name>
-       <managed-bean-class>com.corejsf.RegisterForm</managed-bean-class>
-       <maanged-bean-scope>session</maanged-bean-scope>
-   </managed-bean>
-   
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
-   
--- personalData --
-
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
-
-   <navigation-rule>
-       <from-view-id>/index.jsp</from-view-id>
-       <navigation-case>
-           <from-outcome>thankYou</from-outcome>
-           <to-view-id>/thankYou.jsp</to-view-id>
-       </navigation-case>
-   </navigation-rule>
-   
-   <managed-bean>
-       <managed-bean-name>user</managed-bean-name>
-       <managed-bean-class>com.corejsf.UserBean</managed-bean-class>
-       <maanged-bean-scope>session</maanged-bean-scope>
-   </managed-bean>
-   
--- messages --
-
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
- 
--- javascript --
-
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
-
--- flags --
-
-   <application>
-      <resource-bundle>
-         <base-name>com.corejsf.messages</base-name>
-         <var>msgs</var>
-      </resource-bundle>
-   </application>
-
-      <navigation-rule>
-       <from-view-id>/index.jsp</from-view-id>
-       <navigation-case>
-           <from-outcome>thankYou</from-outcome>
-           <to-view-id>/thankYou.jsp</to-view-id>
-       </navigation-case>
-   </navigation-rule>
-
-         <managed-bean>
-       <managed-bean-name>localeChanger</managed-bean-name>
-       <managed-bean-class>com.corejsf.ChangeLocaleBean</managed-bean-class>
-       <maanged-bean-scope>session</maanged-bean-scope>
-   </managed-bean>
-   
-            <managed-bean>
-       <managed-bean-name>user</managed-bean-name>
-       <managed-bean-class>com.corejsf.UserBean</managed-bean-class>
-       <maanged-bean-scope>session</maanged-bean-scope>
-   </managed-bean>
-         
-      

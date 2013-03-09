@@ -4,26 +4,26 @@
   <f:view>
     <head>
       <title>
-        <h:outputText value="#{msgs.indexWindowTitle}" />
+        <h:outputText value="#{Ch4PersonalDataMsgs.indexWindowTitle}" />
       </title>
     </head>
-      <h:outputText value = "#{msgs.indexPageTitle}" style = "font-style: italic; font-size: 1.5em" />
+      <h:outputText value = "#{Ch4PersonalDataMsgs.indexPageTitle}" style = "font-style: italic; font-size: 1.5em" />
       <h:form>
         <table>
           <tr>
-            <td><h:outputText value = "#{msgs.namePrompt}" /></td>
-            <td><h:inputText value = "#{user.name}" /></td>
+            <td><h:outputText value = "#{Ch4PersonalDataMsgs.namePrompt}" /></td>
+            <td><h:inputText value = "#{Ch4PersonalDataUser.name}" /></td>
           </tr>
           <tr>
-            <td><h:outputText value = "#{msgs.passwordPrompt}" /></td>
-            <td><h:inputText value = "#{user.password}" /></td>
+            <td><h:outputText value = "#{Ch4PersonalDataMsgs.passwordPrompt}" /></td>
+            <td><h:inputText value = "#{Ch4PersonalDataUser.password}" /></td>
           </tr>
           <tr>
-            <td><h:outputText value = "#{msgs.tellUsPrompt}" /></td>
-            <td><h:inputTextarea value = "#{user.aboutYourself}" rows = "5" cols = "35" /></td>
+            <td><h:outputText value = "#{Ch4PersonalDataMsgs.tellUsPrompt}" /></td>
+            <td><h:inputTextarea value = "#{Ch4PersonalDataUser.aboutYourself}" rows = "5" cols = "35" /></td>
           </tr>
         </table>
-        <h:commandButton value = "#{msgs.submitPrompt}" action = "thankYou" />
+        <h:commandButton value = "#{Ch4PersonalDataMsgs.submitPrompt}" action = "thankYou" />
       </h:form>
     <body>
     </body>

@@ -4,22 +4,22 @@
   <f:view>
     <head>
       <title>
-        <h:outputText value="#{msgs.windowTitle}" />
+        <h:outputText value="#{Ch4JavaScriptMsgs.windowTitle}" />
       </title>
     </head>
     <body>
       <h:form>
         <table>
           <tr>
-            <td><h:outputText value="#{msgs.namePrompt}" /></td>
+            <td><h:outputText value="#{Ch4JavaScriptMsgs.namePrompt}" /></td>
             <td><h:inputText /></td>
           </tr>
           <tr>
-            <td><h:outputText value="#{msgs.passwordPrompt}" /></td>
+            <td><h:outputText value="#{Ch4JavaScriptMsgs.passwordPrompt}" /></td>
             <td><h:inputSecret id = "password" /></td>
           </tr>
           <tr>
-            <td><h:outputText value="#{msgs.confirmPassowrdPrompt}" /></td>
+            <td><h:outputText value="#{Ch4JavaScriptMsgs.confirmPasswordPrompt}" /></td>
             <td><h:inputSecret id = "passwordConfirm" /></td>
           </tr>
         </table>
