@@ -15,27 +15,31 @@ public class QuizBean {
     problems.add(new ProblemBean(new int[] { 1, 2, 4, 8, 16 }, 32));  // powers of 2
   }
 
-  public void setProblems(ArrayList<ProblemBean> problems) {
-    this.problems = problems;
+  // PROPERTY: problems
+  public void setProblems(ArrayList<ProblemBean> newValue) {
+    problems = newValue;
     currentIndex = 0;
     score = 0;
   }
 
+  // PROPERTY: score
   public int getScore() {
     return score;
   }
 
+  // PROPERTY: current
   public ProblemBean getCurrent() {
     return problems.get(currentIndex);
   }
 
+  // PROPERTY: answer
   public String getAnswer() {
     return "";
   }
 
-  public void setAnswer(String strAnswer) {
+  public void setAnswer(String newValue) {
     try {
-      int answer = Integer.parseInt(strAnswer.trim());
+      int answer = Integer.parseInt(newValue.trim());
       if (getCurrent().getSolution() == answer) {
         score++;
       }

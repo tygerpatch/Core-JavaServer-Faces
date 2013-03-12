@@ -8,7 +8,7 @@
       </title>
     </head>
     <body>
-      <h:form>
+      <h:form id="registerForm">
         <table>
           <tr>
             <td><h:outputText value="#{Ch4JavaScriptMsgs.namePrompt}" /></td>

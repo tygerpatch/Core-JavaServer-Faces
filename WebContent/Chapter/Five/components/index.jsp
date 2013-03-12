@@ -8,13 +8,13 @@
     </head>
     <body style = "background: #eee">
       <h:form>
-        <h:dataTable value = "#{numberList}" var = "number">
+        <h:dataTable value = "#{Ch5ComponentsNumberList}" var = "number">
 
           <h:column>
             <f:facet name = "header">
               <h:outputText value = "#{Ch5ComponentsMsgs.numberHeader}" />
             </f:facet>
-            <h:outputText value = "#{nunber}" />
+            <h:outputText value = "#{number}" />
           </h:column>
 
           <h:column>

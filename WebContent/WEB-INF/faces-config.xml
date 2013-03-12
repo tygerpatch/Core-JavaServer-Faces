@@ -14,7 +14,6 @@
     </navigation-case>
   </navigation-rule>
 
-  <!-- Chapter 1 : A Simple Example -->
   <managed-bean>
     <managed-bean-name>Ch1User</managed-bean-name>
     <managed-bean-class>Chapter.One.UserBean</managed-bean-class>
@@ -97,7 +96,7 @@
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
       <from-outcome>thankYou</from-outcome>
-      <to-view-id>/thankYou.jsp</to-view-id>
+      <to-view-id>/Chapter/Four/flags/thankYou.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
 
@@ -161,7 +160,7 @@
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
       <from-outcome>thankYou</from-outcome>
-      <to-view-id>/thankYou.jsp</to-view-id>
+      <to-view-id>/Chapter/Four/personalData/thankYou.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
 
@@ -180,14 +179,15 @@
 
   <!--  Chapter 4: Standard JSF Tags; select -->
   <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
       <from-outcome>showInformation</from-outcome>
-      <to-view-id>/showInformatiom.jsp</to-view-id>
+      <to-view-id>/Chapter/Four/select/showInformatiom.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
 
   <managed-bean>
-    <managed-bean-name>Ch4Form</managed-bean-name>
+    <managed-bean-name>Ch4SelectForm</managed-bean-name>
     <managed-bean-class>Chapter.Four.select.RegisterForm</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
@@ -208,7 +208,7 @@
   </application>
 
   <managed-bean>
-    <managed-bean-name>Ch5NumberList</managed-bean-name>
+    <managed-bean-name>Ch5ComponentsNumberList</managed-bean-name>
     <managed-bean-class>java.util.ArrayList</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
     <list-entries>

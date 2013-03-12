@@ -16,42 +16,42 @@
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.customerIdHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.Cust_ID}"/>
+            <h:outputText value="#{customer.Cust_ID}"/>
           </h:column>
 
           <h:column>
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.nameHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.Name}"/>
+            <h:outputText value="#{customer.Name}"/>
           </h:column>
 
           <h:column>
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.phoneHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.Phone_Number}"/>
+            <h:outputText value="#{customer.Phone_Number}"/>
           </h:column>
 
           <h:column>
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.addressHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.Street_Address}"/>
+            <h:outputText value="#{customer.Street_Address}"/>
           </h:column>
 
           <h:column>
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.cityHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.City}"/>
+            <h:outputText value="#{customer.City}"/>
           </h:column>
 
           <h:column>
             <f:facet name="header">
               <h:outputText value="#{Ch5DatabaseMsgs.stateHeader}"/>
             </f:facet>
-            <h:outputText value="#{Ch5DatabaseCustomer.State}"/>
+            <h:outputText value="#{customer.State}"/>
           </h:column>
 
         </h:dataTable>

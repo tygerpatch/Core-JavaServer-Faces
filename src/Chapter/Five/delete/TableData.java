@@ -31,12 +31,12 @@ public class TableData {
   }
 
   public String deleteNames() {
-    if (!getAnyNamesMarkedForDeletion())
+    if (!getAnyNamesMarkedForDeletion()) {
       return null;
+    }
 
     Name[] currentNames = (Name[]) model.getWrappedData();
-    Name[] newNames = new Name[currentNames.length
-        - getNumberOfNamesMarkedForDeletion()];
+    Name[] newNames = new Name[currentNames.length - getNumberOfNamesMarkedForDeletion()];
 
     for (int i = 0, j = 0; i < currentNames.length; ++i) {
       Name name = (Name) currentNames[i];

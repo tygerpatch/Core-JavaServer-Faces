@@ -1,49 +1,26 @@
 package Chapter.Four.select;
 
-import java.awt.Color;
 import java.text.DateFormatSymbols;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 import javax.faces.model.SelectItem;
 
 public class RegisterForm {
-  public enum Education {
-    HIGH_SCHOOL, BACHELOR, MASTER, DOCTOR
-  };
-
-  public static class Weekday {
-    private int dayOfWeek;
-
-    public Weekday(int dayOfWeek) {
-      this.dayOfWeek = dayOfWeek;
-    }
-
-    public String getDayName() {
-      DateFormatSymbols symbols = new DateFormatSymbols();
-      String[] weekdays = symbols.getWeekdays();
-      return weekdays[dayOfWeek];
-    }
-
-    public int getDayNumber() {
-      return dayOfWeek;
-    }
-  }
+  enum Education {HIGH_SCHOOL, BACHELOR, MASTER, DOCTOR};
 
   private String name;
   private boolean contactMe;
-  private int[] bestDaysToContact;
+  private Integer[] bestDaysToContact;
   private Integer yearOfBirth;
-  private int[] colors;
-  private Set<String> languages = new TreeSet<String>();
-  private Education education = Education.BACHELOR;
+  private String[] colors;
+  private String[] languages;
+  private Education education;
 
+  // PROPERTY: name
   public String getName() {
     return name;
   }
@@ -52,6 +29,7 @@ public class RegisterForm {
     name = newValue;
   }
 
+  // PROPERTY: contactMe
   public boolean getContactMe() {
     return contactMe;
   }
@@ -60,14 +38,16 @@ public class RegisterForm {
     contactMe = newValue;
   }
 
-  public int[] getBestDaysToContact() {
+  // PROPERTY: bestDaysToContact
+  public Integer[] getBestDaysToContact() {
     return bestDaysToContact;
   }
 
-  public void setBestDaysToContact(int[] newValue) {
+  public void setBestDaysToContact(Integer[] newValue) {
     bestDaysToContact = newValue;
   }
 
+  // PROPERTY: yearOfBirth
   public Integer getYearOfBirth() {
     return yearOfBirth;
   }
@@ -76,22 +56,25 @@ public class RegisterForm {
     yearOfBirth = newValue;
   }
 
-  public int[] getColors() {
+  // PROPERTY: colors
+  public String[] getColors() {
     return colors;
   }
 
-  public void setColors(int[] newValue) {
+  public void setColors(String[] newValue) {
     colors = newValue;
   }
 
-  public Set<String> getLanguages() {
+  // PROPERTY: languages
+  public String[] getLanguages() {
     return languages;
   }
 
-  public void setLanguages(Set<String> newValue) {
+  public void setLanguages(String[] newValue) {
     languages = newValue;
   }
 
+  // PROPERTY: education
   public Education getEducation() {
     return education;
   }
@@ -100,75 +83,103 @@ public class RegisterForm {
     education = newValue;
   }
 
+  // PROPERTY: yearItems
   public Collection<SelectItem> getYearItems() {
     return birthYears;
   }
 
-  public Weekday[] getDaysOfTheWeek() {
+  // PROPERTY: daysOfTheWeekItems
+  public SelectItem[] getDaysOfTheWeekItems() {
     return daysOfTheWeek;
   }
 
-  public SelectItem[] getLanguageItems() {
+  // PROPERTY: languageItems
+  public Map<String, Object> getLanguageItems() {
     return languageItems;
   }
 
+  // PROPERTY: colorItems
   public SelectItem[] getColorItems() {
     return colorItems;
   }
 
-  public Map<String, Education> getEducationItems() {
+  // PROPERTY: educationItems
+  public SelectItem[] getEducationItems() {
     return educationItems;
   }
 
+  // PROPERTY: bestDaysConcatenated
   public String getBestDaysConcatenated() {
-    return Arrays.toString(bestDaysToContact);
+    return concatenate(bestDaysToContact);
   }
 
+  // PROPERTY: languagesConcatenated
+  public String getLanguagesConcatenated() {
+    return concatenate(languages);
+  }
+
+  // PROPERTY: colorsConcatenated
   public String getColorsConcatenated() {
-    StringBuilder result = new StringBuilder();
-    for (int color : colors)
-      result.append(String.format("%06x ", color));
-    return result.toString();
+    return concatenate(colors);
   }
 
-  private SelectItem[] colorItems = {
-      new SelectItem(Color.RED.getRGB(), "Red"), // value, label
-      new SelectItem(Color.GREEN.getRGB(), "Green"),
-      new SelectItem(Color.BLUE.getRGB(), "Blue"),
-      new SelectItem(Color.YELLOW.getRGB(), "Yellow"),
-      new SelectItem(Color.ORANGE.getRGB(), "Orange", "", true) // disabled
+  private static String concatenate(Object[] values) {
+    if (values == null) {
+      return "";
+    }
+    StringBuilder r = new StringBuilder();
+    for (Object value : values) {
+      if (r.length() > 0) {
+        r.append(',');
+      }
+      r.append(value.toString());
+    }
+    return r.toString();
+  }
+
+  private static SelectItem[] colorItems = {
+    new SelectItem("Red"),
+    new SelectItem("Blue"),
+    new SelectItem("Yellow"),
+    new SelectItem("Green"),
+    new SelectItem("Orange")
   };
 
-  private static Map<String, Education> educationItems;
+  private static SelectItem[] educationItems = {
+      new SelectItem(Education.HIGH_SCHOOL, "High School"),
+      new SelectItem(Education.BACHELOR, "Bachelor's"),
+      new SelectItem(Education.MASTER, "Master's"),
+      new SelectItem(Education.DOCTOR, "Doctorate")
+  };
+
+  private static Map<String, Object> languageItems;
+
   static {
-    educationItems = new LinkedHashMap<String, Education>();
-    educationItems.put("High School", Education.HIGH_SCHOOL); // label, value
-    educationItems.put("Bachelor's", Education.BACHELOR);
-    educationItems.put("Master's", Education.MASTER);
-    educationItems.put("Doctorate", Education.DOCTOR);
-  };
-
-  private static SelectItem[] languageItems = { new SelectItem("English"),
-      new SelectItem("French"), new SelectItem("Russian"),
-      new SelectItem("Italian"),
-      new SelectItem("Esperanto", "Esperanto", "", true) // disabled
-  };
+    languageItems = new LinkedHashMap<String, Object>();
+    languageItems.put("English", "en"); // item, value
+    languageItems.put("French", "fr");
+    languageItems.put("Russian", "ru");
+    languageItems.put("Italian", "it");
+    languageItems.put("Spanish", "es");
+  }
 
   private static Collection<SelectItem> birthYears;
+
   static {
     birthYears = new ArrayList<SelectItem>();
-    // The first item is a "no selection" item
-    birthYears
-        .add(new SelectItem(null, "Pick a year:", "", false, false, true));
-    for (int i = 1900; i < 2020; ++i)
+    for (int i = 1900; i < 2000; ++i) {
       birthYears.add(new SelectItem(i));
+    }
   }
 
-  private static Weekday[] daysOfTheWeek;
+  private static SelectItem[] daysOfTheWeek;
+
   static {
-    daysOfTheWeek = new Weekday[7];
+    DateFormatSymbols symbols = new DateFormatSymbols();
+    String[] weekdays = symbols.getWeekdays();
+    daysOfTheWeek = new SelectItem[7];
     for (int i = Calendar.SUNDAY; i <= Calendar.SATURDAY; i++) {
-      daysOfTheWeek[i - Calendar.SUNDAY] = new Weekday(i);
+      daysOfTheWeek[i - 1] = new SelectItem(new Integer(i), weekdays[i]);
     }
   }
 }

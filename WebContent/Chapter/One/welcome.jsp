@@ -8,7 +8,7 @@
         </head>
         <body>
             <h:form>
-                <h3>Welcome to JavaServer Faces, <h:outputText value = "#{user.name}" />!</h3>
+                <h3>Welcome to JavaServer Faces, <h:outputText value = "#{Ch1User.name}" />!</h3>
             </h:form>
         </body>
     </f:view>    
