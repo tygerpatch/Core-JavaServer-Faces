@@ -3,30 +3,30 @@
   <%@ taglib uri = "http://java.sun.com/jsf/core" prefix = "f" %>
   <f:view>
     <head>
-      <title><h:outputText value = "#{ch2msgs.title}" /></title>
+      <title><h:outputText value = "#{Ch2Msgs.title}" /></title>
     </head>
     <body>
       <h:form>
         <h3>
-          <h:outputText value = "#{ch2msgs.heading}" />
+          <h:outputText value = "#{Ch2Msgs.heading}" />
         </h3>
         <p>
-          <h:outputFormat value = "#{ch2msgs.currentScore}">
-            <f:param value = "#{ch2quiz.score}" />
+          <h:outputFormat value = "#{Ch2Msgs.currentScore}">
+            <f:param value = "#{Ch2Quiz.score}" />
           </h:outputFormat>
         </p>
         <p>
-          <h:outputText value = "#{ch2msgs.guessNext}" />
+          <h:outputText value = "#{Ch2Msgs.guessNext}" />
         </p>
         <p>
-          <h:outputText value = "#{ch2quiz.current.sequence}" />
+          <h:outputText value = "#{Ch2Quiz.current.sequence}" />
         </p>
         <p>
-          <h:outputText value = "#{ch2msgs.answer}" />
-          <h:inputText value = "#{ch2quiz.answer}" />
+          <h:outputText value = "#{Ch2Msgs.answer}" />
+          <h:inputText value = "#{Ch2Quiz.answer}" />
         </p>
         <p>
-          <h:commandButton value = "#{ch2msgs.next}" action = "next" />
+          <h:commandButton value = "#{Ch2Msgs.next}" action = "next" />
         </p>
       </h:form>
     </body>

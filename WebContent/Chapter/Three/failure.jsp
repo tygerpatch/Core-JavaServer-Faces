@@ -3,22 +3,22 @@
   <%@ taglib uri = "http://java.sun.com/jsf/html" prefix = "h" %>
   <f:view>
     <head>
-      <title><h:outputText value="#{ch3msgs.title}" /></title>
+      <title><h:outputText value="#{Ch3Msgs.title}" /></title>
     </head>
     <body>
       <h:form>
          <p>
-            <h:outputText value = "#{ch3msgs.stillNotCorrect}" />
-            <h:outputFormat value="#{ch3msgs.correctAnswer}">
-               <f:param value="#{ch3quiz.answer}"/>
+            <h:outputText value = "#{Ch3Msgs.stillNotCorrect}" />
+            <h:outputFormat value="#{Ch3Msgs.correctAnswer}">
+               <f:param value="#{Ch3Quiz.answer}"/>
             </h:outputFormat>
          </p>
 
-        <p><h:outputText value = "#{ch3msgs.nextProblem}" /></p>
-        <p><h:outputText value = "#{ch3quiz.question}" /></p>
+        <p><h:outputText value = "#{Ch3Msgs.nextProblem}" /></p>
+        <p><h:outputText value = "#{Ch3Quiz.question}" /></p>
 
-        <p><h:inputText value="#{ch3quiz.response}"/></p>
-        <p><h:commandButton value="#{ch3msgs.answerButton}" action = "#{ch3quiz.answerAction}" /></p>
+        <p><h:inputText value="#{Ch3Quiz.response}"/></p>
+        <p><h:commandButton value="#{Ch3Msgs.answerButton}" action = "#{Ch3Quiz.answerAction}" /></p>
       </h:form>
     </body>
   </f:view>

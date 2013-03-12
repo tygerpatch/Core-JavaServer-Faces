@@ -5,13 +5,6 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
   version="1.2">
 
-  <application>
-    <locale-config>
-      <default-locale>en</default-locale>
-      <supported-locale>de</supported-locale>
-    </locale-config>
-  </application>
-
   <!-- Chapter 1 : A Simple Example -->
   <navigation-rule>
     <from-view-id>/Chapter/One/index.jsp</from-view-id>
@@ -21,7 +14,21 @@
     </navigation-case>
   </navigation-rule>
 
+  <!-- Chapter 1 : A Simple Example -->
+  <managed-bean>
+    <managed-bean-name>Ch1User</managed-bean-name>
+    <managed-bean-class>Chapter.One.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
   <!-- Chapter 2 : Managed Beans -->
+  <application>
+    <locale-config>
+      <default-locale>en</default-locale>
+      <supported-locale>de</supported-locale>
+    </locale-config>
+  </application>
+
   <navigation-rule>
     <from-view-id>/index.jsp</from-view-id>
     <navigation-case>
@@ -29,6 +36,19 @@
       <to-view-id>/Chapter/Two/index.jsp</to-view-id>
     </navigation-case>
   </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch2Quiz</managed-bean-name>
+    <managed-bean-class>Chapter.Two.QuizBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Two.messages</base-name>
+      <var>Ch2Msgs</var>
+    </resource-bundle>
+  </application>
 
   <!--  Chapter 3 : Navigation -->
   <navigation-rule>
@@ -59,139 +79,44 @@
     </navigation-case>
   </navigation-rule>
 
-  <!--  Chapter 4: Standard JSF Tags; select -->
-  <navigation-rule>
-    <navigation-case>
-      <from-outcome>showInformation</from-outcome>
-      <to-view-id>/showInformatiom.jsp</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
-  <!--  Chapter 4: Standard JSF Tags; personalData -->
-  <navigation-rule>
-    <from-view-id>/index.jsp</from-view-id>
-    <navigation-case>
-      <from-outcome>thankYou</from-outcome>
-      <to-view-id>/thankYou.jsp</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
-  <!--  Chapter 4: Standard JSF Tags; flags -->
-  <navigation-rule>
-    <from-view-id>/index.jsp</from-view-id>
-    <navigation-case>
-      <from-outcome>thankYou</from-outcome>
-      <to-view-id>/thankYou.jsp</to-view-id>
-    </navigation-case>
-  </navigation-rule>
-
-  <!-- Chapter 1 : A Simple Example -->
   <managed-bean>
-    <managed-bean-name>user</managed-bean-name>
-    <managed-bean-class>Chapter.One.UserBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-
-  <!-- Chapter 2 : Managed Beans -->
-  <managed-bean>
-    <managed-bean-name>ch2quiz</managed-bean-name>
-    <managed-bean-class>Chapter.Two.QuizBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-
-  <!-- Chapter 3 : Navigation -->
-  <managed-bean>
-    <managed-bean-name>ch3quiz</managed-bean-name>
+    <managed-bean-name>Ch3Quiz</managed-bean-name>
     <managed-bean-class>Chapter.Three.QuizBean</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
-  <!--  Chapter 4: Standard JSF Tags; select -->
-  <managed-bean>
-    <managed-bean-name>form</managed-bean-name>
-    <managed-bean-class>Chapter.Four.select.RegisterForm</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-
-  <!--  Chapter 4: Standard JSF Tags; personalData -->
-  <managed-bean>
-    <managed-bean-name>Ch4PersonalDataUser</managed-bean-name>
-    <managed-bean-class>Chapter.Four.personalData.UserBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-
-  <!--  Chapter 4: Standard JSF Tags; panels -->
-  <managed-bean>
-    <managed-bean-name>Ch4PanelsUser</managed-bean-name>
-    <managed-bean-class>Chapter.Four.panels.UserBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
-
-  <!--  Chapter 4: Standard JSF Tags; messages -->
-  <managed-bean>
-    <managed-bean-name>Ch4MessagesUser</managed-bean-name>
-    <managed-bean-class>Chapter.Four.messages.UserBean</managed-bean-class>
-    <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Three.messages</base-name>
+      <var>Ch3Msgs</var>
+    </resource-bundle>
+  </application>
 
   <!--  Chapter 4: Standard JSF Tags; flags -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/thankYou.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
   <managed-bean>
     <managed-bean-name>Ch4FlagsUser</managed-bean-name>
     <managed-bean-class>Chapter.Four.flags.UserBean</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
-  <managed-bean>
-    <managed-bean-name>localeChanger</managed-bean-name>
-    <managed-bean-class>Chapter.Four.flags.LocaleChanger</managed-bean-class>
+   <managed-bean>
+    <managed-bean-name>Ch4FlagsLocaleChanger</managed-bean-name>
+    <managed-bean-class>Chapter.Four.flags.ChangeLocaleBean</managed-bean-class>
     <managed-bean-scope>session</managed-bean-scope>
-  </managed-bean>
+   </managed-bean>
 
-  <!-- Chapter 2 : Managed Beans -->
   <application>
     <resource-bundle>
-      <base-name>Chapter.Two.messages</base-name>
-      <var>ch2msgs</var>
-    </resource-bundle>
-  </application>
-
-  <!-- Chapter 3 : Navigation -->
-  <application>
-    <resource-bundle>
-      <base-name>Chapter.Three.messages</base-name>
-      <var>ch3msgs</var>
-    </resource-bundle>
-  </application>
-
-  <!--  Chapter 4: Standard JSF Tags; select -->
-  <application>
-    <resource-bundle>
-      <base-name>Chapter.Four.select.messages</base-name>
-      <var>Ch4SelectMsgs</var>
-    </resource-bundle>
-  </application>
-
-  <!--  Chapter 4: Standard JSF Tags; personalData -->
-  <application>
-    <resource-bundle>
-      <base-name>Chapter.Four.personalData.messages</base-name>
-      <var>Ch4PersonalDataMsgs</var>
-    </resource-bundle>
-  </application>
-
-  <!--  Chapter 4: Standard JSF Tags; panels -->
-  <application>
-    <resource-bundle>
-      <base-name>Chapter.Four.panels.messages</base-name>
-      <var>Ch4PanelsMsgs</var>
-    </resource-bundle>
-  </application>
-
-  <!--  Chapter 4: Standard JSF Tags; messages -->
-  <application>
-    <resource-bundle>
-      <base-name>Chapter.Four.messages.messages</base-name>
-      <var>Ch4MessagessMsgs</var>
+      <base-name>Chapter.Four.flags.messages</base-name>
+      <var>Ch4FlagsMsgs</var>
     </resource-bundle>
   </application>
 
@@ -203,12 +128,180 @@
     </resource-bundle>
   </application>
 
-  <!--  Chapter 4: Standard JSF Tags; flags -->
+  <!--  Chapter 4: Standard JSF Tags; messages -->
+  <managed-bean>
+    <managed-bean-name>Ch4MessagesUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.messages.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
   <application>
     <resource-bundle>
-      <base-name>Chapter.Four.flags.messages</base-name>
-      <var>Ch4FlagsMsgs</var>
+      <base-name>Chapter.Four.messages.messages</base-name>
+      <var>Ch4MessagessMsgs</var>
     </resource-bundle>
   </application>
+
+  <!--  Chapter 4: Standard JSF Tags; panels -->
+  <managed-bean>
+    <managed-bean-name>Ch4PanelsUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.panels.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.panels.messages</base-name>
+      <var>Ch4PanelsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; personalData -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/thankYou.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch4PersonalDataUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.personalData.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.personalData.messages</base-name>
+      <var>Ch4PersonalDataMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; select -->
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>showInformation</from-outcome>
+      <to-view-id>/showInformatiom.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch4Form</managed-bean-name>
+    <managed-bean-class>Chapter.Four.select.RegisterForm</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.select.messages</base-name>
+      <var>Ch4SelectMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 5 : Data Tables; components -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.components.messages</base-name>
+      <var>Ch5ComponentsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5NumberList</managed-bean-name>
+    <managed-bean-class>java.util.ArrayList</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <list-entries>
+      <value>1</value>
+      <value>2</value>
+      <value>3</value>
+      <value>4</value>
+      <value>5</value>
+    </list-entries>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; database -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.database.messages</base-name>
+       <var>Ch5DatabaseMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5DatabaseCustomer</managed-bean-name>
+    <managed-bean-class>Chapter.Five.database.CustomerBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; delete -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.delete.messages</base-name>
+      <var>Ch5DeleteMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5DeleteTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.delete.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; editing -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.editing.messages</base-name>
+      <var>Ch5EditingMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5EditingTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.editing.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; headersAndFooters -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.headersAndFooters.messages</base-name>
+      <var>Ch5HeadersAndFootersMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5HeadersAndFootersTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.headersAndFooters.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; simple -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.simple.messages</base-name>
+       <var>Ch5SimpleMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5SimpleTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.simple.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; sorting -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.sorting.messages</base-name>
+       <var>Ch5SortingMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5SortingTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.sorting.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
 
 </faces-config>

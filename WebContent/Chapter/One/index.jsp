@@ -11,11 +11,11 @@
            <table>
               <tr>
                  <td>Name:</td>
-                 <td><h:inputText value="#{user.name}"/></td>
+                 <td><h:inputText value="#{Ch1User.name}"/></td>
               </tr>
               <tr>
                  <td>Password:</td>
-                 <td><h:inputSecret value="#{user.password}"/></td>
+                 <td><h:inputSecret value="#{Ch1User.password}"/></td>
               </tr>
            </table>
            <p><h:commandButton value="Login" action="login"/></p>

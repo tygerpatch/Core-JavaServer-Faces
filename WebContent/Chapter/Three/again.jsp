@@ -3,14 +3,14 @@
   <%@ taglib uri = "http://java.sun.com/jsf/html" prefix = "h" %>
   <f:view>
     <head>
-      <title><h:outputText value="#{ch3msgs.title}" /></title>
+      <title><h:outputText value="#{Ch3Msgs.title}" /></title>
     </head>
     <body>
       <h:form>
-        <p><h:outputText value = "#{ch3msgs.notCorrect}" /></p>
-        <p><h:outputText value = "#{ch3quiz.question}" /></p>
-        <p><h:inputText value="#{ch3quiz.response}"/></p>
-        <p><h:commandButton value="#{ch3msgs.answerButton}" action = "#{ch3quiz.answerAction}" /></p>
+        <p><h:outputText value = "#{Ch3Msgs.notCorrect}" /></p>
+        <p><h:outputText value = "#{Ch3Quiz.question}" /></p>
+        <p><h:inputText value="#{Ch3Quiz.response}"/></p>
+        <p><h:commandButton value="#{Ch3Msgs.answerButton}" action = "#{Ch3Quiz.answerAction}" /></p>
       </h:form>
     </body>
   </f:view>

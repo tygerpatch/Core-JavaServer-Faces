@@ -13,12 +13,12 @@
         <table>
           <tr>
             <td>
-              <h:commandLink immediate = "true" action = "#{localeChanger.germandAction}">
+              <h:commandLink immediate = "true" action = "#{Ch4FlagsLocaleChanger.germandAction}">
                 <h:graphicImage value = "de_flag.gif" style = "border: 0px" />
               </h:commandLink>
             </td>
             <td>
-              <h:commandLink immediate = "true" action = "#{localeChanger.englishAction}">
+              <h:commandLink immediate = "true" action = "#{Ch4FlagsLocaleChanger.englishAction}">
                 <h:graphicImage value = "en_flag.gif" style = "border: 0px" />
               </h:commandLink>
             </td>

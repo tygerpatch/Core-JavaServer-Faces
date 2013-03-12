@@ -10,33 +10,33 @@
     </head>
     <body>
       <h:outputFormat value = "#msgs.thankYouLabel}">
-        <f:param value = "#{form.name}" />
+        <f:param value = "#{Ch4Form.name}" />
       </h:outputFormat>
       <p>
         <table>
             <tr>
             <td><h:outputText value = "#{msgs.contactMeLabel}" /></td>
-            <td><h:outputText value = "#{form.contactMe}" /></td>
+            <td><h:outputText value = "#{Ch4Form.contactMe}" /></td>
             </tr>
             <tr>
             <td><h:outputText value = "#{msgs.bestDayLabel}" /></td>
-            <td><h:outputText value = "#{form.bestDaysConcatenated}" /></td>
+            <td><h:outputText value = "#{Ch4Form.bestDaysConcatenated}" /></td>
             </tr>
             <tr>
             <td><h:outputText vlaue = "#{msgs.yearOfBirthLabel}" /></td>
-            <td><h:outputText value = "#{form.yearOfBirth}" /></td>
+            <td><h:outputText value = "#{Ch4Form.yearOfBirth}" /></td>
             </tr>
             <tr>
             <td><h:outputText value = "#{msgs.langaugeLbael}" /></td>
-            <td><h:outputText value = "#{form.languagesConcatenated}" /></td>
+            <td><h:outputText value = "#{Ch4Form.languagesConcatenated}" /></td>
             </tr>
             <tr>
             <td><h:outputText value = "#{msgs.colorLabel}" /></td>
-            <td><h:outputText value = "#{form.colorsConcatenated}" /></td>
+            <td><h:outputText value = "#{Ch4Form.colorsConcatenated}" /></td>
             </tr>
             <tr>
             <td><h:outputText value = "#{msgs.educationLabel}" /></td>
-            <td><h:outputText value = "#{form.education}" /></td>
+            <td><h:outputText value = "#{Ch4Form.education}" /></td>
             </tr>
         </table>
       </p>
