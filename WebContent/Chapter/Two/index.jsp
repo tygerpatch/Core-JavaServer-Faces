@@ -24,6 +24,10 @@
         <p>
           <h:outputText value = "#{Ch2Msgs.answer}" />
           <h:inputText value = "#{Ch2Quiz.answer}" />
+          <%--
+            Ch2Quiz.answer calls QuizBean#getAnswer( ) when page is rendered
+            and QuizBean#setAnswer(String strAnswer) when the page is proceessed.
+          --%>
         </p>
         <p>
           <h:commandButton value = "#{Ch2Msgs.next}" action = "next" />
