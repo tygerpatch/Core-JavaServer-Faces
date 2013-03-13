@@ -304,4 +304,181 @@
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!-- Chapter 6 : Conversion and Validation; converter -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+      <navigation-case>
+        <from-outcome>back</from-outcome>
+        <to-view-id>/index.jsp</to-view-id>
+      </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.converter.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; converter2 -->
+  <application>
+    <message-bundle>com.corejsf.messages</message-bundle>
+  </application>
+
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter> 
+    <converter-id>com.corejsf.CreditCard</converter-id>
+    <converter-class>com.corejsf.CreditCardConverter</converter-class> 
+  </converter>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/canceled.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean> 
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator2 -->
+  <application>
+    <message-bundle>com.corejsf.messages</message-bundle>
+  </application>
+
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter>
+    <converter-id>com.corejsf.CreditCard</converter-id>
+    <converter-class>com.corejsf.CreditCardConverter</converter-class>
+  </converter>
+
+  <validator>
+    <validator-id>com.corejsf.CreditCard</validator-id>
+    <validator-class>com.corejsf.CreditCardValidator</validator-class>
+  </validator>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator3 -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>submit</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>bb</managed-bean-name>
+    <managed-bean-class>com.corejsf.BackingBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
 </faces-config>
