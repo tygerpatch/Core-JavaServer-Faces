@@ -7,7 +7,7 @@
      </head>
      <body>
         <h:form>
-           <h3>Please enter your name and password.</h3>   
+           <h3>Please enter your name and password.</h3>
            <table>
               <tr>
                  <td>Name:</td>
@@ -20,6 +20,6 @@
            </table>
            <p><h:commandButton value="Login" action="login"/></p>
         </h:form>
-     </body>  
-  </f:view>    
+     </body>
+  </f:view>
 </html>
