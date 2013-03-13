@@ -1,0 +1,432 @@
+
+  <!--  Chapter 3 : Navigation -->
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/Chapter/Three/success.jsp</to-view-id>
+      <redirect />
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>again</from-outcome>
+      <to-view-id>/Chapter/Three/again.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>failure</from-outcome>
+      <to-view-id>/Chapter/Three/failure.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>done</from-outcome>
+      <to-view-id>/Chapter/Three/done.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>startOver</from-outcome>
+      <to-view-id>/Chapter/Three/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch3Quiz</managed-bean-name>
+    <managed-bean-class>Chapter.Three.QuizBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Three.messages</base-name>
+      <var>Ch3Msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; flags -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/Chapter/Four/flags/thankYou.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch4FlagsUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.flags.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+   <managed-bean>
+    <managed-bean-name>Ch4FlagsLocaleChanger</managed-bean-name>
+    <managed-bean-class>Chapter.Four.flags.ChangeLocaleBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+   </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.flags.messages</base-name>
+      <var>Ch4FlagsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; javascript -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.javascript.messages</base-name>
+      <var>Ch4JavaScriptMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; messages -->
+  <managed-bean>
+    <managed-bean-name>Ch4MessagesUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.messages.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.messages.messages</base-name>
+      <var>Ch4MessagessMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; panels -->
+  <managed-bean>
+    <managed-bean-name>Ch4PanelsUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.panels.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.panels.messages</base-name>
+      <var>Ch4PanelsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; personalData -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>thankYou</from-outcome>
+      <to-view-id>/Chapter/Four/personalData/thankYou.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch4PersonalDataUser</managed-bean-name>
+    <managed-bean-class>Chapter.Four.personalData.UserBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.personalData.messages</base-name>
+      <var>Ch4PersonalDataMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 4: Standard JSF Tags; select -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>showInformation</from-outcome>
+      <to-view-id>/Chapter/Four/select/showInformatiom.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch4SelectForm</managed-bean-name>
+    <managed-bean-class>Chapter.Four.select.RegisterForm</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Four.select.messages</base-name>
+      <var>Ch4SelectMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!--  Chapter 5 : Data Tables; components -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.components.messages</base-name>
+      <var>Ch5ComponentsMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5ComponentsNumberList</managed-bean-name>
+    <managed-bean-class>java.util.ArrayList</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+    <list-entries>
+      <value>1</value>
+      <value>2</value>
+      <value>3</value>
+      <value>4</value>
+      <value>5</value>
+    </list-entries>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; database -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.database.messages</base-name>
+       <var>Ch5DatabaseMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5DatabaseCustomer</managed-bean-name>
+    <managed-bean-class>Chapter.Five.database.CustomerBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; delete -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.delete.messages</base-name>
+      <var>Ch5DeleteMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5DeleteTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.delete.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; editing -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.editing.messages</base-name>
+      <var>Ch5EditingMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5EditingTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.editing.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; headersAndFooters -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Five.headersAndFooters.messages</base-name>
+      <var>Ch5HeadersAndFootersMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5HeadersAndFootersTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.headersAndFooters.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; simple -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.simple.messages</base-name>
+       <var>Ch5SimpleMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5SimpleTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.simple.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 5 : Data Tables; sorting -->
+  <application>
+    <resource-bundle>
+       <base-name>Chapter.Five.sorting.messages</base-name>
+       <var>Ch5SortingMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch5SortingTableData</managed-bean-name>
+    <managed-bean-class>Chapter.Five.sorting.TableData</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!-- Chapter 6 : Conversion and Validation; converter -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+      <navigation-case>
+        <from-outcome>back</from-outcome>
+        <to-view-id>/index.jsp</to-view-id>
+      </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.converter.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; converter2 -->
+  <application>
+    <message-bundle>com.corejsf.messages</message-bundle>
+  </application>
+
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter> 
+    <converter-id>com.corejsf.CreditCard</converter-id>
+    <converter-class>com.corejsf.CreditCardConverter</converter-class> 
+  </converter>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/canceled.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean> 
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator2 -->
+  <application>
+    <message-bundle>com.corejsf.messages</message-bundle>
+  </application>
+
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter>
+    <converter-id>com.corejsf.CreditCard</converter-id>
+    <converter-class>com.corejsf.CreditCardConverter</converter-class>
+  </converter>
+
+  <validator>
+    <validator-id>com.corejsf.CreditCard</validator-id>
+    <validator-class>com.corejsf.CreditCardValidator</validator-class>
+  </validator>
+
+  <managed-bean>
+    <managed-bean-name>payment</managed-bean-name>
+    <managed-bean-class>com.corejsf.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator3 -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>submit</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>bb</managed-bean-name>
+    <managed-bean-class>com.corejsf.BackingBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>com.corejsf.messages</base-name>
+      <var>msgs</var>
+    </resource-bundle>
+  </application>
