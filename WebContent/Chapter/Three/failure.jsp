@@ -10,7 +10,7 @@
          <p>
             <h:outputText value = "#{Ch3Msgs.stillNotCorrect}" />
             <h:outputFormat value="#{Ch3Msgs.correctAnswer}">
-               <f:param value="#{Ch3Quiz.answer}"/>
+               <f:param value="#{Ch3Quiz.answerToLastQuestion}"/>
             </h:outputFormat>
          </p>
 

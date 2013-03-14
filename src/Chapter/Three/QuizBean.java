@@ -1,11 +1,8 @@
 package Chapter.Three;
 
 public class QuizBean {
-  private int currentProblem;
-  private int tries;
-  private int score;
-  private String response = "";
-  private String correctAnswer;
+  private int current, score, attempt;
+  private String response;
 
   // Here, we hardwire the problems.
   // In a real application, they would come from a database
@@ -20,75 +17,62 @@ public class QuizBean {
   };
 
   public QuizBean() {
-    startOver();
+    init();
   }
 
-  // PROPERTY: question
   public String getQuestion() {
-    return problems[currentProblem].getQuestion();
+    return problems[current].getQuestion();
   }
 
-  // PROPERTY: answer
-  public String getAnswer() {
-    return correctAnswer;
+  public String getAnswerToLastQuestion() {
+    return problems[current - 1].getAnswer();
   }
 
-  // PROPERTY: score
   public int getScore() {
     return score;
   }
 
-  // PROPERTY: response
   public String getResponse() {
     return response;
   }
 
-  public void setResponse(String newValue) {
-    response = newValue;
+  public void setResponse(String response) {
+    this.response = response;
   }
 
   public String answerAction() {
-    tries++;
-    if (problems[currentProblem].isCorrect(response)) {
+    String fromOutcome;
+    attempt++;
+
+    if(response.trim().equalsIgnoreCase(problems[current].getAnswer())) {
       score++;
-      nextProblem();
-      if (currentProblem == problems.length) {
-        return "done";
-      }
-      else {
-        return "success";
-      }
+      getNextProblem();
+      fromOutcome = (current == problems.length) ? "done" : "success";
     }
-    else if (tries == 1) {
-      return "again";
+    else if(1 == attempt) {
+      fromOutcome = "again";
     }
     else {
-      nextProblem();
-      if (currentProblem == problems.length) {
-        return "done";
-      }
-      else {
-        return "failure";
-      }
+      getNextProblem();
+      fromOutcome = (current == problems.length) ? "done" : "failure";
     }
+
+    return fromOutcome;
   }
 
   public String startOverAction() {
-    startOver();
+    init();
     return "startOver";
   }
 
-  private void startOver() {
-    currentProblem = 0;
-    score = 0;
-    tries = 0;
+  private void init() {
+    current = score = attempt = 0;
     response = "";
   }
 
-  private void nextProblem() {
-    correctAnswer = problems[currentProblem].getAnswer();
-    currentProblem++;
-    tries = 0;
+  private void getNextProblem() {
+    current++;
+    attempt = 0;
     response = "";
   }
 }

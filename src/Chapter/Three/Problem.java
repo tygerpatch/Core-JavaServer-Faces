@@ -16,9 +16,4 @@ public class Problem {
   public String getAnswer() {
     return answer;
   }
-
-  // override for more sophisticated checking
-  public boolean isCorrect(String response) {
-    return response.trim().equalsIgnoreCase(answer);
-  }
 }
