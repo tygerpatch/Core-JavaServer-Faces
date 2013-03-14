@@ -3,7 +3,6 @@
   <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
   <f:view>
     <head>
-      <link href = "styles.css" rel = "stylesheet" type = "text/css" />
       <title>
         <h:outputText value="#{Ch4FlagsMsgs.indexWindowTitle}" />
       </title>
@@ -13,7 +12,7 @@
         <table>
           <tr>
             <td>
-              <h:commandLink immediate = "true" action = "#{Ch4FlagsLocaleChanger.germandAction}">
+              <h:commandLink immediate = "true" action = "#{Ch4FlagsLocaleChanger.germanAction}">
                 <h:graphicImage value = "de_flag.gif" style = "border: 0px" />
               </h:commandLink>
             </td>
