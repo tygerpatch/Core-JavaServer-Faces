@@ -1,9 +1,7 @@
 package Chapter.Four.personalData;
 
 public class UserBean {
-  private String name;
-  private String password;
-  private String aboutYourself;
+  private String name, password, aboutYourself;
 
   public String getName() {
     return name;
