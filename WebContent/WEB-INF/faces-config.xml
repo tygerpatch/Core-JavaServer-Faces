@@ -47,4 +47,46 @@
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!--  Chapter 3 : Navigation -->
+  <navigation-rule>
+    <navigation-case>
+      <from-outcome>success</from-outcome>
+      <to-view-id>/Chapter/Three/success.jsp</to-view-id>
+      <redirect />
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>again</from-outcome>
+      <to-view-id>/Chapter/Three/again.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>failure</from-outcome>
+      <to-view-id>/Chapter/Three/failure.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>done</from-outcome>
+      <to-view-id>/Chapter/Three/done.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>startOver</from-outcome>
+      <to-view-id>/Chapter/Three/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch3Quiz</managed-bean-name>
+    <managed-bean-class>Chapter.Three.QuizBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Three.messages</base-name>
+      <var>Ch3Msgs</var>
+    </resource-bundle>
+  </application>
+
 </faces-config>
