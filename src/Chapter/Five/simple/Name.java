@@ -1,8 +1,7 @@
 package Chapter.Five.simple;
 
 public class Name {
-  private String first;
-  private String last;
+  private String first, last;
   public boolean edtiable;
 
   public Name(String first, String last) {
@@ -11,27 +10,11 @@ public class Name {
     this.edtiable = true;
   }
 
-  public void setFirst(String first) {
-    this.first = first;
-  }
-
   public String getFirst() {
     return first;
   }
 
-  public void setLast(String last) {
-    this.last = last;
-  }
-
   public String getLast() {
     return last;
-  }
-
-  public boolean getEditable() {
-    return edtiable;
-  }
-
-  public void setEditable(boolean editable) {
-    this.edtiable = editable;
   }
 }

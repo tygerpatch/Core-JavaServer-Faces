@@ -3,6 +3,7 @@ package Chapter.Five.delete;
 import javax.faces.model.DataModel;
 import javax.faces.model.ArrayDataModel;
 
+// TODO: refactor
 public class TableData {
   private boolean editable = false;
   private ArrayDataModel model = null;
@@ -54,12 +55,14 @@ public class TableData {
 
     for (int i = 0; i < currentNames.length; ++i) {
       Name name = (Name) currentNames[i];
-      if (name.isMarkedForDeletion())
+      if (name.isMarkedForDeletion()) {
         ++cnt;
+      }
     }
     return cnt;
   }
 
+  // TODO: rename to hasAnyNamesMarkedForDeletion
   public boolean getAnyNamesMarkedForDeletion() {
     Name[] currentNames = (Name[]) model.getWrappedData();
     for (int i = 0; i < currentNames.length; ++i) {

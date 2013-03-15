@@ -3,12 +3,14 @@ package Chapter.Five.sorting;
 import javax.faces.model.DataModel;
 import javax.faces.model.ArrayDataModel;
 
+// TODO: refactor & document
 public class TableData {
   private DataModel filterModel = null;
 
   private static final Name[] names = {
     new Name("Anna", "Keeney"),
-    new Name("John", "Wilson"), new Name("Mariko", "Randor"),
+    new Name("John", "Wilson"),
+    new Name("Mariko", "Randor"),
     new Name("William", "Dupont"),
   };
 

@@ -38,7 +38,8 @@
           </h:column>
 
         </h:dataTable>
-        <h:commandButton value="#{Ch5SortingMsgs.deleteButtonText}" action="#{Ch5SortingTableData.deleteNames}" rendered="#{Ch5SortingTableData.anyNamesMarkedForDeletion}"/>
+        <h:commandButton value="#{Ch5SortingMsgs.deleteButtonText}" action="#{Ch5SortingTableData.deleteNames}" 
+          rendered="#{Ch5SortingTableData.anyNamesMarkedForDeletion}"/>
       </h:form>
     </body>
   </f:view>

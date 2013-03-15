@@ -6,6 +6,7 @@ import javax.faces.model.DataModel;
 import javax.faces.model.DataModelEvent;
 import javax.faces.model.DataModelListener;
 
+// TODO: refactor & document
 public class SortFilterModel extends DataModel {
   private DataModel model;
   private Row[] rows;

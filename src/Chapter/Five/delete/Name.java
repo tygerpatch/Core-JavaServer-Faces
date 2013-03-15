@@ -1,8 +1,7 @@
 package Chapter.Five.delete;
 
 public class Name {
-  private String first;
-  private String last;
+  private String first, last;
   private boolean markedForDeletion = false;
 
   public Name(String first, String last) {
@@ -10,16 +9,8 @@ public class Name {
     this.last = last;
   }
 
-  public void setFirst(String newValue) {
-    first = newValue;
-  }
-
   public String getFirst() {
     return first;
-  }
-
-  public void setLast(String newValue) {
-    last = newValue;
   }
 
   public String getLast() {
