@@ -10,18 +10,18 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
+// TODO: refactor
 public class Messages {
   public static FacesMessage getMessage(String bundleName, String resourceId, Object[] params) {
     FacesContext context = FacesContext.getCurrentInstance();
-    Application app = context.getApplication();
-    String appBundle = app.getMessageBundle();
+    String messageBundle = context.getApplication().getMessageBundle();
     Locale locale = getLocale(context);
-    ClassLoader loader = getClassLoader();
-    String summary = getString(appBundle, bundleName, resourceId, locale, loader, params);
+    ClassLoader classLoader = getClassLoader();
+    String summary = getString(messageBundle, bundleName, resourceId, locale, classLoader, params);
     if (summary == null) {
       summary = "???" + resourceId + "???";
     }
-    String detail = getString(appBundle, bundleName, resourceId + "_detail", locale, loader, params);
+    String detail = getString(messageBundle, bundleName, resourceId + "_detail", locale, classLoader, params);
     return new FacesMessage(summary, detail);
   }
 
@@ -34,12 +34,12 @@ public class Messages {
     return getString(appBundle, bundle, resourceId, locale, loader, params);
   }
 
-  public static String getString(String bundle1, String bundle2, String resourceId, Locale locale, ClassLoader loader, Object[] params) {
+  public static String getString(String messageBundle, String bundleName, String resourceId, Locale locale, ClassLoader classLoader, Object[] params) {
     String resource = null;
     ResourceBundle bundle;
 
-    if (bundle1 != null) {
-      bundle = ResourceBundle.getBundle(bundle1, locale, loader);
+    if (messageBundle != null) {
+      bundle = ResourceBundle.getBundle(messageBundle, locale, classLoader);
       if (bundle != null) {
         try {
           resource = bundle.getString(resourceId);
@@ -50,7 +50,7 @@ public class Messages {
     }
 
     if (resource == null) {
-      bundle = ResourceBundle.getBundle(bundle2, locale, loader);
+      bundle = ResourceBundle.getBundle(bundleName, locale, classLoader);
       if (bundle != null) {
         try {
           resource = bundle.getString(resourceId);
@@ -63,6 +63,7 @@ public class Messages {
     if (resource == null) {
       return null; // no match
     }
+
     if (params == null) {
       return resource;
     }

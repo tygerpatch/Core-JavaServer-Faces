@@ -6,6 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 
+// TODO: refactor
 public class CreditCardConverter implements Converter {
   public Object getAsObject(FacesContext context, UIComponent component, String newValue) throws ConverterException {
     StringBuilder builder = new StringBuilder(newValue);

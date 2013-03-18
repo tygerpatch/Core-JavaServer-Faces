@@ -7,7 +7,6 @@ public class PaymentBean {
   private CreditCard card = new CreditCard("");
   private Date date = new Date();
 
-  // PROPERTY: amount
   public void setAmount(double newValue) {
     amount = newValue;
   }
@@ -16,7 +15,6 @@ public class PaymentBean {
     return amount;
   }
 
-  // PROPERTY: card
   public void setCard(CreditCard newValue) {
     card = newValue;
   }
@@ -25,7 +23,6 @@ public class PaymentBean {
     return card;
   }
 
-  // PROPERTY: date
   public void setDate(Date newValue) {
     date = newValue;
   }

@@ -6,6 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
+// TODO: refactor
 public class CreditCardValidator implements Validator {
   public void validate(FacesContext context, UIComponent component, Object value) {
     if (value == null) {

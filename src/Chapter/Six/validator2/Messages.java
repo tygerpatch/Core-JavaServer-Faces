@@ -10,6 +10,7 @@ import javax.faces.application.FacesMessage;
 import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
+// TODO: refactor
 public class Messages {
   public static FacesMessage getMessage(String bundleName, String resourceId, Object[] params) {
     FacesContext context = FacesContext.getCurrentInstance();
