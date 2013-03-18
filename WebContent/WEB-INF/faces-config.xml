@@ -302,4 +302,173 @@
     <managed-bean-scope>session</managed-bean-scope>
   </managed-bean>
 
+  <!-- Chapter 6 : Conversion and Validation; converter -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch6ConverterPayment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.converter.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Six.converter.messages</base-name>
+      <var>Ch6ConverterMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>cancel</from-outcome>
+      <to-view-id>/canceled.jsp</to-view-id>
+    </navigation-case>
+
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean> 
+    <managed-bean-name>Ch6ValidatorPayment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.validator.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Six.validator.messages</base-name>
+      <var>Ch6ValidatorMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; converter2 -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter> 
+    <converter-id>Ch6Converter2CreditCard</converter-id>
+    <converter-class>Chapter.Six.converter2.CreditCardConverter</converter-class> 
+  </converter>
+
+  <managed-bean>
+    <managed-bean-name>Ch6Converter2Payment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.converter2.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <message-bundle>Chapter.Six.converter2.messages</message-bundle>
+    <resource-bundle>
+      <base-name>Chapter.Six.converter2.messages</base-name>
+      <var>Ch6Converter2Msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator2 -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>process</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <converter>
+    <converter-id>Ch6Validator2CreditCard</converter-id>
+    <converter-class>Chapter.Six.validator2.CreditCardConverter</converter-class>
+  </converter>
+
+  <validator>
+    <validator-id>Ch6Validator2CreditCard</validator-id>
+    <validator-class>Chapter.Six.validator2.CreditCardValidator</validator-class>
+  </validator>
+
+  <managed-bean>
+    <managed-bean-name>Ch6Validator2Payment</managed-bean-name>
+    <managed-bean-class>Chapter.Six.validator2.PaymentBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <message-bundle>Chapter.Six.validator2.messages</message-bundle>
+    <resource-bundle>
+      <base-name>Chapter.Six.validator2.messages</base-name>
+      <var>Ch6Validator2Msgs</var>
+    </resource-bundle>
+  </application>
+
+  <!-- Chapter 6 : Conversion and Validation; validator3 -->
+  <navigation-rule>
+    <from-view-id>/index.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>submit</from-outcome>
+      <to-view-id>/result.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <navigation-rule>
+    <from-view-id>/result.jsp</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <managed-bean-name>Ch6Validator3BackingBean</managed-bean-name>
+    <managed-bean-class>Chapter.Six.validator3.BackingBean</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Six.validator3.messages</base-name>
+      <var>Ch6Validator3Msgs</var>
+    </resource-bundle>
+  </application>
+
 </faces-config>
