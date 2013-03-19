@@ -471,4 +471,82 @@
     </resource-bundle>
   </application>
 
+  <!--  Chapter 7 : Event Handling; valuechange -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Seven.valuechange.messages</base-name>
+      <var>Ch7ValueChangeMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch7ValueChangeForm</managed-bean-name>
+    <managed-bean-class>Chapter.Seven.valuechange.RegisterForm</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+
+  <!--  Chapter 7 : Event Handling; rushmore -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Seven.rushmore.messages</base-name>
+      <var>Ch7RushmoreMsgs</var>
+    </resource-bundle>
+  </application>
+
+   <navigation-rule>
+      <navigation-case>
+         <from-outcome>index</from-outcome>
+         <to-view-id>/Chapter/Seven/rushmore/index.jsp</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+
+   <navigation-rule>
+      <from-view-id>/index.jsp</from-view-id>
+      <navigation-case>
+         <from-outcome>washington</from-outcome>
+         <to-view-id>/washington.jsp</to-view-id>
+      </navigation-case>
+
+      <navigation-case>
+         <from-outcome>jefferson</from-outcome>
+         <to-view-id>/jefferson.jsp</to-view-id>
+      </navigation-case>
+
+      <navigation-case>
+         <from-outcome>roosevelt</from-outcome>
+         <to-view-id>/roosevelt.jsp</to-view-id>
+      </navigation-case>
+
+      <navigation-case>
+         <from-outcome>lincoln</from-outcome>
+         <to-view-id>/lincoln.jsp</to-view-id>
+      </navigation-case>
+   </navigation-rule>
+
+   <managed-bean> 
+      <managed-bean-name>Ch7Rushmore</managed-bean-name>
+      <managed-bean-class>Chapter.Seven.rushmore.Rushmore</managed-bean-class> 
+      <managed-bean-scope>session</managed-bean-scope> 
+   </managed-bean>
+
+  <!--  Chapter 7 : Event Handling; phase-tracker -->
+  <application>
+    <resource-bundle>
+      <base-name>Chapter.Seven.phaseTracker.messages</base-name>
+      <var>Ch7PhaseTrackerMsgs</var>
+    </resource-bundle>
+  </application>
+
+  <managed-bean>
+    <managed-bean-name>Ch7PhaseTrackerForm</managed-bean-name>
+    <managed-bean-class>Chapter.Seven.phaseTracker.FormBean</managed-bean-class> 
+    <managed-bean-scope>session</managed-bean-scope> 
+  </managed-bean>
+
+  <!-- 
+  <lifecycle>
+    <phase-listener>Chapter.Seven.phaseTracker.PhaseTracker</phase-listener>
+  </lifecycle>
+  -->
+  
 </faces-config>
